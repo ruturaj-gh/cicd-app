@@ -1,13 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:20'
+        }
+    }
 
     stages {
-
-        stage('Clone') {
-            steps {
-                echo 'Cloning repository...'
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
